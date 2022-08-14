@@ -1,0 +1,7 @@
+body {
+  background-color: black;
+  margin: 0;
+  font-family: 'El Messiri', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
