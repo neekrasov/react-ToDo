@@ -1,4 +1,4 @@
-import './EmpListItem.sass'
+import './TaskListItem.sass'
 
 const EmpListItem = ({name, metric, important}) => {
     return (

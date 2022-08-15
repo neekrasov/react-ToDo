@@ -1,5 +1,5 @@
-import EmpListItem from "../EmpListItem/EmpListItem"
-import './EmpList.sass'
+import EmpListItem from "../TaskListItem/TaskListItem"
+import './TaskList.sass'
 
 const EmpList = ({data}) =>{
     return (
