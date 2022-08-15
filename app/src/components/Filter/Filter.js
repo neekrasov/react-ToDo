@@ -11,6 +11,9 @@ const Filter = () => {
 
             <button className="btn btn-outline-info"
             type="button">Metric greater than 5</button>
+
+            <button className="btn btn-outline-info"
+            type="button">Starred</button>
         </div>
     )
 }

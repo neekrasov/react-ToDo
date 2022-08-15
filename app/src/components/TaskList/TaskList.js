@@ -1,12 +1,12 @@
-import EmpListItem from "../TaskListItem/TaskListItem"
+import TaskListItem from "../TaskListItem/TaskListItem"
 import './TaskList.sass'
 
-const EmpList = ({data}) =>{
+const TaskList = ({data}) =>{
     return (
         <ul className="app-list list-group">
-            {data.map(item => (<EmpListItem {...item}/>))}
+            {data.map(item => (<TaskListItem {...item}/>))}
         </ul>
     )
 }
 
-export default EmpList
+export default TaskList
