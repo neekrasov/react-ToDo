@@ -6,6 +6,14 @@ import EmpCreateForm from '../EmpCreateForm/EmpCreateForm';
 import './App.sass';
 
 const App = () => {
+
+    const data = [
+        {name: "Alex", salary: 10, increase: true},
+        {name: "John", salary: 100, increase: false},
+        {name: "Nika", salary: 1000, increase: true},
+        {name: "Vasya", salary: 1000, increase: false},
+    ]
+
     return (
         <div className="app">
                 <InfoHeader/>
@@ -13,7 +21,7 @@ const App = () => {
                     <SearchPanel/>
                     <Filter/>
                 </div>
-                <EmpList/>
+                <EmpList data = {data}/>
                 <EmpCreateForm/>
         </div>
     )

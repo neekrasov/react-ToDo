@@ -1,12 +1,10 @@
 import EmpListItem from "../EmpListItem/EmpListItem"
 import './EmpList.sass'
 
-const EmpList = () =>{
+const EmpList = ({data}) =>{
     return (
         <ul className="app-list list-group">
-            <EmpListItem/>
-            <EmpListItem/>
-            <EmpListItem/>
+            {data.map(item => (<EmpListItem {...item}/>))}
         </ul>
     )
 }
