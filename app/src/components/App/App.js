@@ -1,8 +1,8 @@
 import InfoHeader from '../InfoHeader/InfoHeader';
 import SearchPanel from '../SearchPanel/SearchPanel';
 import Filter from '../Filter/Filter'
-import EmpList from '../EmpList/EmpList';
-import EmpCreateForm from '../EmpCreateForm/EmpCreateForm';
+import EmpList from '../TaskList/TaskList';
+import EmpCreateForm from '../CreateTaskForm/CreateTaskForm';
 import './App.sass';
 
 const App = () => {
