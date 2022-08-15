@@ -3,14 +3,14 @@ import './Filter.sass'
 const Filter = () => {
     return (
         <div className="btn-group">
-            <button className="btn btn-dark"
-            type="button">All employees</button>
+            <button className="btn btn-outline-info"
+            type="button">All tasks</button>
 
-            <button className="btn btn-outline-dark"
-            type="button">For promotion</button>
+            <button className="btn btn-outline-info"
+            type="button">Important</button>
 
-            <button className="btn btn-outline-dark"
-            type="button">Salary over 1000$</button>
+            <button className="btn btn-outline-info"
+            type="button">Metric greater than 5</button>
         </div>
     )
 }

@@ -8,10 +8,10 @@ import './App.sass';
 const App = () => {
 
     const data = [
-        {name: "Alex", salary: 10, increase: true, key: 1},
-        {name: "John", salary: 100, increase: false, key: 2},
-        {name: "Nika", salary: 1000, increase: true, key: 3},
-        {name: "Vasya", salary: 1000, increase: false, key: 4},
+        {name: "Task 1", metric: 1, important: true, key: 1},
+        {name: "Task 2", metric: 8, important: false, key: 2},
+        {name: "Task 3", metric: 4, important: true, key: 3},
+        {name: "Task 4", metric: 7, important: false, key: 4},
     ]
 
     return (

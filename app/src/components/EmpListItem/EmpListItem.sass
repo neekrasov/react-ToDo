@@ -1,11 +1,11 @@
 .list-group-item 
     padding: 15px 20px
-    border-bottom: 1px solid purple
+    border-bottom: 1px groove black
     &:last-child 
         border-bottom: none
     span 
         line-height: 35px
-        font-size: 20px
+        font-size: 23px
         cursor: pointer
         min-width: 550px
     input 
@@ -21,6 +21,16 @@
         font-size: 17px
         border: none
         cursor: pointer
+
+    .checkbox
+        display: flex
+        align-items: top
+        justify-content: center
+        width: 35px
+        height: 35px
+        input
+            border: 1px solid blue
+            
 
 
     .btn-cookie 
@@ -49,7 +59,7 @@
  
 
     &.increase &-label, &.increase &-input 
-        color: #e09f3e
+        color: red
 
   
     &.increase .btn-star 

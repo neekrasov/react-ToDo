@@ -3,9 +3,9 @@ import './InfoHeader.sass';
 const InfoHeader = () => {
     return (
         <div className="app-info">
-            <h1>Employee accounting</h1>
-            <h2>Total number of employees: </h2>
-            <h2>Number of contenders for the award: </h2>
+            <h1>To-do list</h1>
+            <h2>Number of tasks: </h2>
+            <h2>Number of important tasks: </h2>
         </div>
     )
 }

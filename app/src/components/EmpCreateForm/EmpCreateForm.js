@@ -2,18 +2,18 @@ import './EmpCreateForm.sass';
 const EmpCreateForm = () => {
     return (
         <div className="app-add-form">
-            <h3>Add a new employee</h3>
+            <h3>Add a new task</h3>
             <form
                 className="add-form d-flex">
                 <input type="text"
                     className="form-control new-post-label"
-                    placeholder="name" />
+                    placeholder="Name" />
                 <input type="number"
                     className="form-control new-post-label"
-                    placeholder="Salary $" />
+                    placeholder="Metric" />
 
                 <button type="submit"
-                        className="btn btn-outline-light">Add</button>
+                        className="btn btn-outline-info">Add</button>
             </form>
         </div>
     )
