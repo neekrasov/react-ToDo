@@ -1,4 +1,5 @@
 .list-group-item 
+    justify-content: space-between !important
     padding: 15px 20px
     border-bottom: 1px groove black
     &:last-child 
@@ -7,12 +8,13 @@
         line-height: 35px
         font-size: 23px
         cursor: pointer
-        min-width: 550px
+        max-width: 550px
     input 
         line-height: 35px
         font-size: 20px
         text-align: center
         border: 0
+        margin-left: auto
 
     button 
         width: 35px
@@ -24,21 +26,24 @@
 
     .checkbox
         display: flex
-        align-items: top
-        justify-content: center
+        align-items: flex-start
         width: 35px
         height: 35px
         input
+            margin-right: auto
             border: 1px dotted rgb(24, 59, 231)
             
 
-
-    .btn-cookie 
-        color: #e09f3e
-
-
-    .btn-trash 
-        color: #e5383b
+    .btn
+        
+        &-cookie 
+            color: #e09f3e
+            background: white !important
+        &-trash 
+            color: #e5383b
+            background: white !important
+        &:last-child 
+            border-bottom: none
 
 
     .fa-star 
@@ -49,7 +54,6 @@
         font-size: 16px
         color: #FFD700
         transition: 0.3s all
-        transform: translateX(30px)
         opacity: 0
 
 
