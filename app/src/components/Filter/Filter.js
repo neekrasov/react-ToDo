@@ -2,45 +2,37 @@ import { useState } from 'react';
 import './Filter.sass'
 
 const Filter = ({setbuttonFilter}) => {
-
     const [button, setButton] = useState('');
+
+    const buttonsInfo = [
+        {name: '', label: 'All tasks', key: 1},
+        {name: 'important', label: 'Important', key: 2},
+        {name: 'star', label: 'Starred', key: 3},
+        {name: 'complete', label: 'Completed', key: 4},
+    ]
 
     const setFilter = (e) =>{
         setbuttonFilter(e.target.name);
         setButton(e.target.name);
     }
 
+    const buttonsArr = buttonsInfo.map(item => {
+        return(
+            <button
+            key={buttonsInfo.indexOf(item)}
+            className={`btn ${button === item.name ? 'btn-info' : 'btn-outline-info'}`}
+            type="button"
+            name={item.name}
+            onClick={(e)=>{setFilter(e)}}>{item.label}
+            </button>
+        )
+    })
+
+
+
     return (
         <div className="btn-group">
-            <button 
-            className="btn btn-outline-info"
-            type="button"
-            name="all"
-            onClick={(e)=>{setFilter(e)}}>All tasks</button>
-
-            <button 
-            className="btn btn-outline-info"
-            type="button"
-            name="important"
-            onClick={(e)=>{setFilter(e)}}>Important</button>
-
-            <button 
-            className="btn btn-outline-info"
-            type="button"
-            name="metric"
-            onClick={(e)=>{setFilter(e)}}>Metric greater than 5</button>
-
-            <button 
-            className="btn btn-outline-info"
-            type="button"
-            name="star"
-            onClick={(e)=>{setFilter(e)}}>Starred</button>
-
-            <button 
-            className="btn btn-outline-info"
-            type="button"
-            name="complete"
-            onClick={(e)=>{setFilter(e)}}>Completed</button>
+            {buttonsArr}
         </div>
     )
 }

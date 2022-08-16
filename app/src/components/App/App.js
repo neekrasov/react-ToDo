@@ -14,7 +14,7 @@ const App = () => {
         {name: "Task 4", metric: 7, important: false, star: false, complete: false, key: 4},
     ]);
 
-    const [taskFilter, setTaskFilter] = useState('');
+    const [inputFilter, setTaskFilter] = useState('');
     const [buttonFilter, setbuttonFilter] = useState('');
 
     const [maxId, setMaxId] = useState(5);
@@ -29,8 +29,7 @@ const App = () => {
     const countProp = (propName) => data.filter((item)=> propName === 'all'? data.length :item[propName] === true).length;
 
     const onSerchByButtons = (prop, items) => {
-        if (prop === 'all') return items
-        else if (prop==='metric') return items.filter(item=> item.metric>5);
+        if (prop === '') return items
         return items.filter(item=> item[prop] === true)
     };
 
@@ -41,20 +40,7 @@ const App = () => {
         return items;
     }
 
-    // Rework the algorithm with classes
-    const searchTasks = (items, filter, button) => {
-        if (filter && button.length === 0){
-            return searchBySearchInput(items, filter);
-        }else if (button && filter.length === 0){
-            return onSerchByButtons(button, items);
-        }else if (button.length !== 0 && filter.length !== 0){
-            let fullFilterItems = onSerchByButtons(button, items);
-            return searchBySearchInput(fullFilterItems, filter)
-        };
-        return items
-    };
-
-    const displayData = searchTasks(data, taskFilter, buttonFilter);
+    const displayData = onSerchByButtons(buttonFilter, searchBySearchInput(data, inputFilter))
     return (
         <div className="app">
                 <InfoHeader
