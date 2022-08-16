@@ -14,6 +14,8 @@ const App = () => {
         {name: "Task 4", metric: 7, important: false, star: false, complete: false, key: 4},
     ]);
 
+    const [taskFilter, setTaskFilter] = useState('');
+
     const [maxId, setMaxId] = useState(5);
 
     const toggleProp = (propName, key) => setData(data.map(item => {
@@ -25,16 +27,23 @@ const App = () => {
 
     const countProp = (propName) => data.filter((item)=> propName === 'all'? data.length :item[propName] === true).length
 
+    const searchTasks = (items, filter) => {
+        if (filter.length !== 0) return items.filter(item=> item.name.indexOf(filter) !== -1);
+        else return items;
+    }
+
+    const displayData = searchTasks(data, taskFilter);
     return (
         <div className="app">
                 <InfoHeader
                 countProp={countProp}/>
                 <div className="search-panel">
-                    <SearchPanel/>
+                    <SearchPanel
+                        updateSearch = {setTaskFilter}/>
                     <Filter/>
                 </div>
                 <TaskList 
-                    data = {data}
+                    data = {displayData}
                     onDelete={key => setData(data.filter(item=>item.key!==key))}
                     toggleProp={toggleProp}/>
                 <TaskCreateForm
