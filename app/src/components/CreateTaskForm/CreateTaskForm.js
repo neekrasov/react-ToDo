@@ -1,7 +1,7 @@
 import './CreateTaskForm.sass';
 import { useState } from 'react';
 
-const TaskCreateForm = () => {
+const TaskCreateForm = ({onCreate}) => {
     const [name, setName] = useState('');
     const [metric, setMetric] = useState('');
 
@@ -9,6 +9,9 @@ const TaskCreateForm = () => {
         <div className="app-add-form">
             <h3>Add a new task</h3>
             <form
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    onCreate(name, metric)}}
                 className="add-form d-flex">
                 <input type="text"
                     name='name'
@@ -24,7 +27,8 @@ const TaskCreateForm = () => {
                     onChange={(e) => setMetric(e.target.value)} />
 
                 <button type="submit"
-                        className="btn btn-outline-info">Add</button>
+                        className="btn btn-outline-info"
+                        >Add</button>
             </form>
         </div>
     )

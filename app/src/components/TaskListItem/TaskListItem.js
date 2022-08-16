@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import './TaskListItem.sass';
 
-const TaskListItem = ({name, metric}) => {
+const TaskListItem = ({name, metric, onDelete}) => {
     let [important, setImportant] = useState(false);
     let [starred, setStar] = useState(false);
 
@@ -21,7 +21,8 @@ const TaskListItem = ({name, metric}) => {
                 </button>
 
                 <button type="button"
-                        className="btn-trash btn-sm ">
+                        className="btn-trash btn-sm "
+                        onClick={onDelete} >
                     <i className="fas fa-trash"></i>
                 </button>
                 <i className="fas fa-star"></i>
