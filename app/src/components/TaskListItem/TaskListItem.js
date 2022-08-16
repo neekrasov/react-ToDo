@@ -1,22 +1,22 @@
-import {useState} from 'react';
 import './TaskListItem.sass';
 
-const TaskListItem = ({name, metric, onDelete}) => {
-    let [important, setImportant] = useState(false);
-    let [starred, setStar] = useState(false);
+const TaskListItem = ({name, metric, important, star, complete, onDelete, toggleImportant, toggleStar, toggleComplete}) => {
 
     return (
-        <li className={`list-group-item d-flex justify-content-between${important? " increase": ''}${starred? " like": ''}`}>
-            <span className="list-group-item-label"
-            onClick={() => setStar(!starred)}>{name}</span>
+        <li className={`list-group-item d-flex justify-content-between${important? " increase": ''}${star? " like": ''}`}>
+            <span className="list-group-item-label" onClick={toggleStar}>{name}</span>
             <input type="text" className="list-group-item-input" defaultValue={metric}/>
             <div className='d-flex justify-content-center align-items-center'>
                 <div className="checkbox">
-                    <input type="checkbox" className="form-check-input"/>
+                    <input 
+                    type="checkbox" 
+                    className="form-check-input"
+                    onClick={toggleComplete}
+                    value={complete}/>
                 </div>
                 <button type="button"
                     className="btn-cookie btn-sm "
-                    onClick={() => setImportant(!important)}>
+                    onClick={toggleImportant}>
                     <i className="fas fa-cookie"></i>
                 </button>
 

@@ -8,23 +8,35 @@ import './App.sass';
 
 const App = () => {
     const [data, setData] = useState([
-        {name: "Task 1", metric: 1, important: false, key: 1},
-        {name: "Task 2", metric: 8, important: false, key: 2},
-        {name: "Task 3", metric: 4, important: false, key: 3},
-        {name: "Task 4", metric: 7, important: false, key: 4},
+        {name: "Task 1", metric: 1, important: false, star: false, complete: false, key: 1},
+        {name: "Task 2", metric: 8, important: false, star: false, complete: false, key: 2},
+        {name: "Task 3", metric: 4, important: false, star: false, complete: false, key: 3},
+        {name: "Task 4", metric: 7, important: false, star: false, complete: false, key: 4},
     ]);
 
     const [maxId, setMaxId] = useState(5);
+
+    const toggleProp = (propName, key) => setData(data.map(item => {
+            if (item.key === key){
+                item[propName] = !item[propName];
+            }
+            return item
+    }));
+
+    const countProp = (propName) => data.filter((item)=> propName === 'all'? data.length :item[propName] === true).length
+
     return (
         <div className="app">
-                <InfoHeader/>
+                <InfoHeader
+                countProp={countProp}/>
                 <div className="search-panel">
                     <SearchPanel/>
                     <Filter/>
                 </div>
                 <TaskList 
                     data = {data}
-                    onDelete={key => setData(data.filter(item=>item.key!==key))}/>
+                    onDelete={key => setData(data.filter(item=>item.key!==key))}
+                    toggleProp={toggleProp}/>
                 <TaskCreateForm
                     onCreate={(name, metric) => {
                         let newData = data.slice();
@@ -32,6 +44,8 @@ const App = () => {
                             name: name,
                             metric: metric,
                             important: false,
+                            star: false,
+                            complete: false,
                             key: maxId});
                         
                         setData(newData);
