@@ -12,7 +12,7 @@ const TaskListItem = ({name, metric, important, star, complete, onDelete, toggle
                     type="checkbox" 
                     className="form-check-input"
                     onClick={toggleComplete}
-                    value={complete}/>
+                    defaultChecked={complete}/>
                 </div>
                 <button type="button"
                     className="btn-cookie btn-sm "
